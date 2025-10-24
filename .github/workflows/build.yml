@@ -103,7 +103,7 @@ jobs:
       - name: Build & Push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: JPablo0505/Laboratorio-2-Arquisoft
+          image: jpablo0505/lab2-arqui
           tags: latest
           registry: docker.io
           dockerfile: Dockerfile
