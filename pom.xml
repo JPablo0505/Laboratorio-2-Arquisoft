@@ -67,6 +67,7 @@
 			</executions>
 			</plugin>
 		</plugins>
+		<finalName>lab2-arqui</finalName>
 	</build>
 
 </project>

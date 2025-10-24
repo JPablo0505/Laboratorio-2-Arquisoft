@@ -98,4 +98,14 @@ jobs:
           #Set artifact name
           name: artifact
           #From this path
-          path: target/lab2-arqui-0.0.1-SNAPSHOT.jar
+          path: target/lab2-arqui.jar
+      #Build and Push Docker image
+      - name: Build & Push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: JPablo0505/Laboratorio-2-Arquisoft
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
