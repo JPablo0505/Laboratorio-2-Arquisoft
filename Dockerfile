@@ -1,11 +1,12 @@
-#Construccion
+# Construcción
 FROM maven:latest AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
-#Empaquetado
-From openjdk:17-jdk-slim
+
+# Empaquetado
+FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/lab2-arqui lab2-arqui
+COPY --from=build /app/target/*.jar lab2-arqui.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","lab2-arqui"]
+ENTRYPOINT ["java", "-jar", "lab2-arqui.jar"]
